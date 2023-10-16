@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-struct ContentView: View {
+struct CreateAccount: View {
     @State private var username: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
@@ -55,9 +55,9 @@ struct ContentView: View {
     }
 
 
-struct ContentView_Previews: PreviewProvider {
+struct CreateAccount_Previews: PreviewProvider {
         static var previews: some View {
-            ContentView()
+            CreateAccount()
         }
         
     }// preview
