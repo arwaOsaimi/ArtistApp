@@ -14,6 +14,4 @@ struct seach_bar: View {
     }
 }
 
-#Preview {
-    seach_bar()
-}
+

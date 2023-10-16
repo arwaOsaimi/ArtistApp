@@ -27,34 +27,45 @@ struct User_Account: View {
                         .frame (width: 50, height: 50)
                         .cornerRadius(8)
                         .position(x: 15,y:35)
-                        .tint(.black)
+//                        .tint(.black)
                         .ignoresSafeArea()
                     VStack{
+                        
                         Text("Sara")
                             .font(.title2).foregroundColor(.black)
                             .position(x: -13,y:20)
                         Text("Sara@gmail.com")
                             .position(x: -10,y:10).font(.callout)
-                        .foregroundColor(.gray)}}
+//                        .foregroundColor(.gray)
+                        
+                    }
+                    
+                }
                 List{
                     Section(header: Text("MANAGE GALLERY")) {
                         HStack{
-                            galImage
-                                .resizable()
-                                .frame (width: 50, height: 50)
-                                .cornerRadius(8)
-                                .position(x: 15,y:35)
-                            TextField("Galllery's Name", text: $galName)
-                                .position(x: -10,y:30).font(.callout)
-                                .foregroundColor(.gray)
-                            Image(systemName:"chevron.right")
-                            
+                            ForEach(0..<1){_ in
+                                galImage
+                                    .resizable()
+                                    .frame (width: 50, height: 50)
+                                    .cornerRadius(8)
+                                    .position(x: 15,y:35)
+                                Text("Ghnadi Museme")
+//                                    .position(x: -10,y:30).font(.callout)
+                                    .foregroundColor(.gray)
+                                
+                                Image(systemName:"chevron.right")
+                                
+                            }.onDelete(perform: { IndexSet in
+                                
+                            })
                                 .swipeActions {
                                     Button {
                                         print("Delete")
                                     } label: {
                                         Label("Delete", systemImage:
-                                                "trash.fill").tint(.red)
+                                                "trash.fill")
+                                        .tint(.pink)
                                     }
                                 }.swipeActions {
                                     Button {
@@ -85,56 +96,59 @@ struct User_Account: View {
                                     togPrivate = false
                                 }
                             }}}
-                List{
+//                List{
+//
+//                    Section(header: Text("MANAGE GALLERY")) {
+//                        HStack{
+//                            galImage2
+//                                .resizable()
+//                                .frame (width: 50, height: 50)
+//                                .cornerRadius(8)
+//                                .position(x: 15,y:35)
+//                            TextField("Galllery's Name", text: $galName2)
+//                                .position(x: -10,y:30).font(.callout)
+//                                .foregroundColor(.gray)
+//                            Image(systemName:"chevron.right")
+//                                .swipeActions {
+//                                    Button {
+//                                        print( "Delete")
+//                                    } label: {
+//                                        Label("Delete", systemImage:
+//                                                "trash.fill").tint(.red)
+//                                    }
+//                                }.swipeActions {
+//                                    Button {
+//                                        print( "Edit")
+//                                    } label: {
+//                                        Label("Edit", systemImage:
+//                                                "gearshape").tint(.orange)
+//                                    }
+//                                }
+//                                .swipeActions {
+//                                    Button {
+//                                        print( "Share")
+//                                    } label: {
+//                                        Label("Share", systemImage:
+//                                                "square.and.arrow.up").tint(.blue)
+//                                    }
+//                                }
+//                        }
+//                        Toggle("Private", isOn: $togPrivate2)
+//                            .onChange(of: togPrivate2) { newValue in
+//                                if newValue {
+//                                    togPublish2 = false
+//                                }
+//                            }
+//                        Toggle("Publish", isOn: $togPublish2)
+//                            .onChange(of: togPublish2) { newValue in
+//                                if newValue {
+//                                    togPrivate2 = false
+//                                }
+//                            }}
+//                }
                 
-                    Section(header: Text("MANAGE GALLERY")) {
-                        HStack{
-                            galImage2
-                                .resizable()
-                                .frame (width: 50, height: 50)
-                                .cornerRadius(8)
-                                .position(x: 15,y:35)
-                            TextField("Galllery's Name", text: $galName2)
-                                .position(x: -10,y:30).font(.callout)
-                                .foregroundColor(.gray)
-                            Image(systemName:"chevron.right")
-                                .swipeActions {
-                                    Button {
-                                        print( "Delete")
-                                    } label: {
-                                        Label("Delete", systemImage:
-                                                "trash.fill").tint(.red)
-                                    }
-                                }.swipeActions {
-                                    Button {
-                                        print( "Edit")
-                                    } label: {
-                                        Label("Edit", systemImage:
-                                                "gearshape").tint(.orange)
-                                    }
-                                }
-                                .swipeActions {
-                                    Button {
-                                        print( "Share")
-                                    } label: {
-                                        Label("Share", systemImage:
-                                                "square.and.arrow.up").tint(.blue)
-                                    }
-                                }
-                        }
-                        Toggle("Private", isOn: $togPrivate2)
-                            .onChange(of: togPrivate2) { newValue in
-                                if newValue {
-                                    togPublish2 = false
-                                }
-                            }
-                        Toggle("Publish", isOn: $togPublish2)
-                            .onChange(of: togPublish2) { newValue in
-                                if newValue {
-                                    togPrivate2 = false
-                                }
-                            }}
-                }}
+                
+            }
             .navigationTitle("Account")}
 
 

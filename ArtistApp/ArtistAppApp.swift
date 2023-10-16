@@ -12,10 +12,10 @@ struct ArtistAppApp: App {
     var body: some Scene {
         WindowGroup {
             
-         //   ContentView()
-              
             SplashScreenView()
-            
+//            ContentView()
+//            ExploreScreen()
+
         }
        
     }

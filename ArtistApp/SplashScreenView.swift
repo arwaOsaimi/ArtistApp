@@ -13,9 +13,8 @@ struct SplashScreenView: View {
     var body: some View {
         ZStack {
                  if self.isActive {
-                    // ContentView()
+                     ExploreScreen()
                      
-                     CreateAccount()
                  } else {
                      //Rectangle()
                          
