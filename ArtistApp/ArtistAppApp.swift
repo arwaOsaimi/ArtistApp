@@ -13,7 +13,7 @@ struct ArtistAppApp: App {
         WindowGroup {
             
          //   ContentView()
-            
+              
             SplashScreenView()
             
         }
