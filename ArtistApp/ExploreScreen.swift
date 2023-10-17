@@ -92,13 +92,13 @@ struct ExploreScreen: View {
                 .navigationBarItems(trailing:
                                         HStack {
                                                             Button(action: {
-                            //Mayasem
-                                                            }) {
+                                                            }) { NavigationLink(destination: CreateArtGallery()){
                                                                 Image(systemName: "plus")
+                                                            }
+                                                                
                                                             }
                                                             .font(.system(size: 20))
                                                             Button(action: {
-                            //Renad Page
                                                             }) { NavigationLink(destination: User_Account()){
                                                                 
                                                                 

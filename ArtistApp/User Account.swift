@@ -27,45 +27,34 @@ struct User_Account: View {
                         .frame (width: 50, height: 50)
                         .cornerRadius(8)
                         .position(x: 15,y:35)
-//                        .tint(.black)
+                        .tint(.black)
                         .ignoresSafeArea()
                     VStack{
-                        
-                        Text("Sara")
+                        Text("Sara Saad Ali")
                             .font(.title2).foregroundColor(.black)
                             .position(x: -13,y:20)
-                        Text("Sara@gmail.com")
+                        Text("Sarasad@gmail.com")
                             .position(x: -10,y:10).font(.callout)
-//                        .foregroundColor(.gray)
-                        
-                    }
-                    
-                }
+                            .foregroundColor(.blue)}}
                 List{
                     Section(header: Text("MANAGE GALLERY")) {
                         HStack{
-                            ForEach(0..<1){_ in
-                                galImage
-                                    .resizable()
-                                    .frame (width: 50, height: 50)
-                                    .cornerRadius(8)
-                                    .position(x: 15,y:35)
-                                Text("Ghnadi Museme")
-//                                    .position(x: -10,y:30).font(.callout)
-                                    .foregroundColor(.gray)
-                                
-                                Image(systemName:"chevron.right")
-                                
-                            }.onDelete(perform: { IndexSet in
-                                
-                            })
+                            galImage
+                                .resizable()
+                                .frame (width: 50, height: 50)
+                                .cornerRadius(8)
+                                .position(x: 15,y:35)
+                            TextField("Galllery's Name", text: $galName)
+                                .position(x: -10,y:30).font(.callout)
+                                .foregroundColor(.gray)
+                            Image(systemName:"chevron.right")
+                            
                                 .swipeActions {
                                     Button {
                                         print("Delete")
                                     } label: {
                                         Label("Delete", systemImage:
-                                                "trash.fill")
-                                        .tint(.pink)
+                                                "trash.fill").tint(.red)
                                     }
                                 }.swipeActions {
                                     Button {
@@ -90,70 +79,16 @@ struct User_Account: View {
                                     togPublish = false
                                 }
                             }
-                        Toggle("Publish", isOn: $togPublish)
-                            .onChange(of: togPublish) { newValue in
-                                if newValue {
-                                    togPrivate = false
-                                }
-                            }}}
-//                List{
-//
-//                    Section(header: Text("MANAGE GALLERY")) {
-//                        HStack{
-//                            galImage2
-//                                .resizable()
-//                                .frame (width: 50, height: 50)
-//                                .cornerRadius(8)
-//                                .position(x: 15,y:35)
-//                            TextField("Galllery's Name", text: $galName2)
-//                                .position(x: -10,y:30).font(.callout)
-//                                .foregroundColor(.gray)
-//                            Image(systemName:"chevron.right")
-//                                .swipeActions {
-//                                    Button {
-//                                        print( "Delete")
-//                                    } label: {
-//                                        Label("Delete", systemImage:
-//                                                "trash.fill").tint(.red)
-//                                    }
-//                                }.swipeActions {
-//                                    Button {
-//                                        print( "Edit")
-//                                    } label: {
-//                                        Label("Edit", systemImage:
-//                                                "gearshape").tint(.orange)
-//                                    }
-//                                }
-//                                .swipeActions {
-//                                    Button {
-//                                        print( "Share")
-//                                    } label: {
-//                                        Label("Share", systemImage:
-//                                                "square.and.arrow.up").tint(.blue)
-//                                    }
-//                                }
-//                        }
-//                        Toggle("Private", isOn: $togPrivate2)
-//                            .onChange(of: togPrivate2) { newValue in
-//                                if newValue {
-//                                    togPublish2 = false
-//                                }
-//                            }
-//                        Toggle("Publish", isOn: $togPublish2)
-//                            .onChange(of: togPublish2) { newValue in
-//                                if newValue {
-//                                    togPrivate2 = false
-//                                }
-//                            }}
-//                }
+                        
+                    }}
                 
-                
+                    }}
+                .navigationTitle("Account")
             }
-            .navigationTitle("Account")}
-
-
+            
+        
     }
-}
+
 
 struct User_Account_Previews: PreviewProvider {
     static var previews: some View {

@@ -15,9 +15,7 @@ struct SplashScreenView: View {
                  if self.isActive {
                      ExploreScreen()
                      
-                 } else {
-                     //Rectangle()
-                         
+                 } else {                         
                      Image("logo")
                          .resizable()
                          .scaledToFit()
